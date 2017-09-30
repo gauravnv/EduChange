@@ -2,7 +2,7 @@
 <html lang="en">
     
     <head>
-        <title>bootstrap theme</title>
+        <title>Home</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,12 +12,27 @@
     </head>
     
     <body>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">site name</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Conditions</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+            </ul>
+          </div>
+        </nav> 
         
-        <div class="container-fluid text-center bg1">
+        
+        
+        <div class="container-fluid basic-container text-center bg1">
             <h1>Website Name</h1>
         </div>
         
-        <div class="container-fluid text-center bg2">
+        <div class="container-fluid basic-container text-center bg2">
             <h3>Common Conditions</h3>
             
             <div class="row inner-container">
@@ -37,14 +52,18 @@
             <p>Link to full list of conditions</p> 
         </div>
         
-        <div class="container-fluid text-center bg3">
+        <div class="container-fluid basic-container text-center bg3">
             <h3>Select Symptoms</h3>
-            <p>Symptom Checkboxes</p>
+            <div class="inner-container">
+                <p>Symptom Checkboxes</p>
+            </div>
         </div>
         
-        <div class="container-fluid text-center bg2">
+        <div class="container-fluid basic-container text-center bg2">
             <h3>About</h3>
-            <p>Information About</p>
+            <div class="inner-container">
+                <p>Information About</p>
+            </div>
         </div>
     </body>
     

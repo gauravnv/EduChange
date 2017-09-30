@@ -10,7 +10,7 @@
     background-color: #D6F8D6;
 }
 
-.container-fluid{
+.basic-container{
     padding-top: 60px;
     padding-bottom: 60px;
 }
@@ -18,4 +18,8 @@
 .inner-container{
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.navbar-default{
+    margin: 0px !important;
 }
