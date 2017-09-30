@@ -1,0 +1,21 @@
+.bg1{
+    background-color: #7FC6A4;
+}
+
+.bg2{
+    background-color: #FEE9E1;
+}
+
+.bg3{
+    background-color: #D6F8D6;
+}
+
+.container-fluid{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.inner-container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
