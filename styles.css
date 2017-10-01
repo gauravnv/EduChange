@@ -1,19 +1,18 @@
 .bg1{
-    background-color: #7FC6A4;
+    background-color: gray;
 }
 
 .bg2{
-    background-color: #FEE9E1;
-}
-
-.bg3{
-    background-color: #D6F8D6;
+    background-color: dimgray;
 }
 
 .basic-container{
     padding-top: 60px;
     padding-bottom: 60px;
+    width: 80%;
+    border-radius: 20px;
 }
+
 
 .inner-container{
     padding-top: 30px;
@@ -22,4 +21,35 @@
 
 .navbar-default{
     margin: 0px !important;
+}
+
+p, h1, h2, h3{
+    color: white;
+}
+
+.top-buffer{
+    margin-top: 20px;   
+}
+
+body{
+    height:100vh
+}
+
+h1{
+    font-size: 100px;
+}
+
+.full-height{
+    min-height: 100%;
+    height: 100%;
+}
+
+.footer{
+    height: 8%;
+}
+
+.front-page{
+    min-height: 100%;
+    height:100%;
+    margin-top: -20px;
 }
