@@ -1,5 +1,5 @@
 .bg1{
-    background-color: gray;
+    background-color: mediumpurple;
 }
 
 .bg2{
@@ -52,4 +52,13 @@ h1{
     min-height: 100%;
     height:100%;
     margin-top: -20px;
+}
+
+.title-buffer{
+    margin-top: 10%;
+}
+
+.center{
+    text-align: center;
+    display:inline-block;
 }
