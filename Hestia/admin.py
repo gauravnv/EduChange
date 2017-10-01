@@ -2,5 +2,10 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
+from .models import Parent
+from .models import Video
+from .models import Condition
 
-# Register your models here.
+admin.site.register(Parent)
+admin.site.register(Video)
+admin.site.register(Condition)
