@@ -6,9 +6,9 @@ from .models import User
 
 def index(request):
     allUsers = User.objects.all()
-    return render(request, 'Hestia/index.html', {'allUsers': allUsers})
+    return render(request, 'Hestia/home.html', {'allUsers': allUsers})
 
-def conditions(request):
+def condition(request):
     return render(request, 'Hestia/condition.html')
 
 def detail(request, User_id):

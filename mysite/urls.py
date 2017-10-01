@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^', include('Hestia.urls')),
+    url(r'^', include('Hestia.urls', namespace="Hestia")),
 	url(r'^', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
 ]
