@@ -8,5 +8,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
 
     # /Hestia/20/
-    url(r'^(?P<Parent_id>$'),
+    url(r'^(?P<Parent_id>[0-9]+$', views.detail, name='detail'),
 ]
