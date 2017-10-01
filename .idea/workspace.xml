@@ -308,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506871660480</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit the front-end">
+      <created>1506882566645</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1506882566645</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -346,7 +353,8 @@
     <MESSAGE value="Added some html and bootstrap files" />
     <MESSAGE value="Added bootstrap and template files and removed Parent model" />
     <MESSAGE value="Removed a bunch of stuff and added html/bootstrap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed a bunch of stuff and added html/bootstrap" />
+    <MESSAGE value="Commit the front-end" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit the front-end" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
