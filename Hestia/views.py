@@ -6,7 +6,7 @@ from .models import Parent
 
 def index(request):
     allParents = Parent.objects.all()
-    return render(request, 'Hestia/index.html', {'allParents': allParents,})
+    return render(request, 'Hestia/index.html', {'allParents': allParents})
 
 def detail(request, Parent_id):
     try:
