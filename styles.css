@@ -106,7 +106,7 @@ h1{
 }
 
 .nav-pills{
-    background-color: dimgray;
+    background-color: mediumpurple;
     color:white !important;
     text-emphasis-color:white;
 }
@@ -129,8 +129,8 @@ h1{
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-    color:white;
-    background-color:mediumpurple;
+    color:mediumpurple;
+    background-color:white;
     }
 
 .search-bar{
