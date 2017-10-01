@@ -1,7 +1,16 @@
-from django.http import HttpResponse
+from django.http import Http404
+
+from django.shortcuts import render
+from .models import Parent
+
 
 def index(request):
-    return HttpResponse("<h1>This is Hestia's Homepage</h1>")
+    allParents = Parent.objects.all()
+    return render(request, 'Hestia/index.html', {'allParents': allParents,})
 
 def detail(request, Parent_id):
-    return HttpResponse("<h2>Details for Parent id: " + str(Parent_id) + "</h2>")
+    try:
+        Parent = Parent.objects.get(pk=Parent_id)
+    except Parent.DoesNotExist:
+        raise Http404("Parent does not exist")
+    return render(request, 'Hestia/detail.html', {'Parent': Parent})

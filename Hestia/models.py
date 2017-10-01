@@ -63,10 +63,13 @@ class Video(models.Model):
         return self.title + '-' + self.author
 
 class Condition(models.Model):
-    conditionName = models.CharField(max_length=50)
+    conditionName = models.CharField(max_length=10, choices=CONDITIONS)
     subCondition = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
     writtenBy = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.conditionName + '-' + self.description
 
 class Parent(models.Model):
     firstName = models.CharField(max_length=75, verbose_name="First Name")
@@ -80,7 +83,7 @@ class Parent(models.Model):
                                     verbose_name="Province")
     postalCode = models.CharField(max_length=6, blank=True, null=True, verbose_name="Postal Code")
 
-
+    conditionName = models.ForeignKey()
     numberOfUpvotes = models.IntegerField(max_length=75, blank=True, null=True, verbose_name="Number of Upvotes")
     userSince = models.DateField(max_length=75, default="", blank=True, null=True, verbose_name="User Since")
 
