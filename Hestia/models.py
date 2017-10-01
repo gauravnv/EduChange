@@ -71,20 +71,25 @@ class Answer(models.Model):
 	upvotes  = models.IntegerField()
 
 class Video(models.Model):
-    title = models.CharField(max_length=100)
-    transcript = models.CharField(max_length=1000000)
-    author = models.CharField(max_length=60)
+
+    title = models.CharField(max_length=100, verbose_name="Title")
+    transcript = models.CharField(max_length=1000000, verbose_name="Transcript")
+    author = models.CharField(max_length=60, verbose_name="Author")
     publication_date = models.DateField()
-    condition = models.CharField(max_length=4, choices=CONDITIONS)
+    conditionName = models.ForeignKey("Condition", on_delete=models.CASCADE, default="")
 
     def __str__(self):
         return self.title + '-' + self.author
 
 class Condition(models.Model):
-    conditionName = models.CharField(max_length=50)
-    subCondition = models.CharField(max_length=50)
-    description = models.CharField(max_length=1000)
-    writtenBy = models.CharField(max_length=1000)
+    conditionName = models.CharField(max_length=10, choices=CONDITIONS, verbose_name="Condition Name")
+    subCondition = models.CharField(max_length=50, verbose_name="Symptoms")
+    description = models.CharField(max_length=1000, verbose_name="Description")
+    writtenBy = models.CharField(max_length=1000, verbose_name="Source/Written by")
+
+    def __str__(self):
+        return self.conditionName + '-' + self.description
+
 
 class User(models.Model):
     firstName = models.CharField(max_length=75, verbose_name="First Name")
@@ -103,4 +108,5 @@ class User(models.Model):
     userSince = models.DateField(max_length=75, default="", blank=True, null=True, verbose_name="User Since")
 
     def __str__(self):
-    	return self.firstName + "-" + str(self.numberOfUpvotes)
+        return self.firstName + "-" + str(self.numberOfUpvotes)
+

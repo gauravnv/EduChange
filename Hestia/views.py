@@ -1,7 +1,16 @@
-from django.http import HttpResponse
+from django.http import Http404
+
+from django.shortcuts import render
+from .models import User
+
 
 def index(request):
-    return HttpResponse("<h1>This is Hestia's Homepage</h1>")
+    allUsers = User.objects.all()
+    return render(request, 'Hestia/index.html', {'allUsers': allUsers})
 
-def detail(request, Parent_id):
-    return HttpResponse("<h2>Details for Parent id: " + str(Parent_id) + "</h2>")
+def detail(request, User_id):
+    try:
+        User = User.objects.get(pk=User_id)
+    except User.DoesNotExist:
+        raise Http404("User does not exist")
+    return render(request, 'Hestia/detail.html', {'User': User})

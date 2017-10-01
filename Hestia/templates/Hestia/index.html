@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+     {% for User in allUsers %}
+        {% if allUsers %}
+            <ul>
+                    <li><a href="/User/{{ User.id }}/">{{ User.firstName }}</a> </li>
+
+            </ul>
+         {% else %}
+            <h3>No User added yet</h3>
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>
