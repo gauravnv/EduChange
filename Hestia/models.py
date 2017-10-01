@@ -30,6 +30,7 @@ CONDITIONS = (
 )
 
 # Create your models here.
+
 class Videos(models.Model):
     title = models.CharField(max_length=100)
     transcript = models.CharField(max_length=1000000)
