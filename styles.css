@@ -178,3 +178,40 @@ li{
     padding-left: 20%;
     padding-right: 20%;
 }
+
+.white-box{
+    color: mediumpurple;
+    background-color: white;
+}
+
+.qa-box{
+    color: mediumpurple;
+    background-color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    height: 20%;
+}
+
+.short-qa-box{
+    color: mediumpurple;
+    background-color: white;
+    padding-top: 1%;
+    padding-bottom: 5%;
+    height: 10px;
+}
+
+.purple-text{
+    color: mediumpurple;
+}
+
+.align-left{
+    text-align: left;
+}
+
+.top-buffer-small{
+    margin-top: 12px;
+}
+
+.black-text{
+    color: black;
+}
