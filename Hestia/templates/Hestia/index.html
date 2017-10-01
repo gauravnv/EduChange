@@ -6,14 +6,14 @@
 </head>
 <body>
 
-     {% for Parent in allParents %}
-        {% if allParents %}
+     {% for User in allUsers %}
+        {% if allUsers %}
             <ul>
-                    <li><a href="/Parent/{{ Parent.id }}/">{{ Parent.firstName }}</a> </li>
+                    <li><a href="/User/{{ User.id }}/">{{ User.firstName }}</a> </li>
 
             </ul>
          {% else %}
-            <h3>No Parents added yet</h3>
+            <h3>No User added yet</h3>
         {% endif %}
     {% endfor %}
 

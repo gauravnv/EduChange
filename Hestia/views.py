@@ -1,16 +1,16 @@
 from django.http import Http404
 
 from django.shortcuts import render
-from .models import Parent
+from .models import User
 
 
 def index(request):
-    allParents = Parent.objects.all()
-    return render(request, 'Hestia/index.html', {'allParents': allParents})
+    allUsers = User.objects.all()
+    return render(request, 'Hestia/index.html', {'allUsers': allUsers})
 
-def detail(request, Parent_id):
+def detail(request, User_id):
     try:
-        Parent = Parent.objects.get(pk=Parent_id)
-    except Parent.DoesNotExist:
-        raise Http404("Parent does not exist")
-    return render(request, 'Hestia/detail.html', {'Parent': Parent})
+        User = User.objects.get(pk=User_id)
+    except User.DoesNotExist:
+        raise Http404("User does not exist")
+    return render(request, 'Hestia/detail.html', {'User': User})
