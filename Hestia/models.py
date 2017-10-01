@@ -63,23 +63,26 @@ class Video(models.Model):
         return self.title + '-' + self.author
 
 class Condition(models.Model):
-        conditionName = models.CharField(max_length=50)
-        subCondition = models.CharField(max_length=50)
-        description = models.CharField(max_length=1000)
-        writtenBy = models.CharField(max_length=1000)
+    conditionName = models.CharField(max_length=50)
+    subCondition = models.CharField(max_length=50)
+    description = models.CharField(max_length=1000)
+    writtenBy = models.CharField(max_length=1000)
 
 class Parent(models.Model):
-        firstName = models.CharField(max_length=75, verbose_name="First Name")
-        lastName = models.CharField(max_length=75, verbose_name="Last Name")
-        email = models.EmailField(verbose_name="E-mail")
-        phoneNumber = models.CharField(validators=[phone_regex], max_length=12, blank=True, null=True,
+    firstName = models.CharField(max_length=75, verbose_name="First Name")
+    lastName = models.CharField(max_length=75, verbose_name="Last Name")
+    email = models.EmailField(verbose_name="E-mail")
+    phoneNumber = models.CharField(validators=[phone_regex], max_length=12, blank=True, null=True,
                                         verbose_name="Number")
 
-        city = models.CharField(max_length=30, blank=True, null=True, verbose_name="City")
-        province = models.CharField(max_length=20, choices=province_choices, blank=True, null=True,
+    city = models.CharField(max_length=30, blank=True, null=True, verbose_name="City")
+    province = models.CharField(max_length=20, choices=province_choices, blank=True, null=True,
                                     verbose_name="Province")
-        postalCode = models.CharField(max_length=6, blank=True, null=True, verbose_name="Postal Code")
+    postalCode = models.CharField(max_length=6, blank=True, null=True, verbose_name="Postal Code")
 
 
-        numberOfUpvotes = models.IntegerField(max_length=75, blank=True, null=True, verbose_name="Number of Upvotes")
-        userSince = models.DateField(max_length=75, default="", blank=True, null=True, verbose_name="User Since")
+    numberOfUpvotes = models.IntegerField(max_length=75, blank=True, null=True, verbose_name="Number of Upvotes")
+    userSince = models.DateField(max_length=75, default="", blank=True, null=True, verbose_name="User Since")
+
+def __str__(self):
+    return self.firstName + '-' + str(self.numberOfUpvotes)
