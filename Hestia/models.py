@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.core.validators import RegexValidator
+from datetime import datetime
 
 CONDITIONS = (
         ("ASD", "Autism Spectrum Disorders"),
@@ -51,6 +52,23 @@ phone_regex = RegexValidator(regex=r'^\+?1?\d{10,12}$',
 				message="Phone number must be entered in the format: '+16045555555'.")
 
 # Create your models here.
+class Question(models.Model):
+	author  = models.ForeignKey("User", on_delete=models.CASCADE, default="")
+	title   = models.CharField(max_length=150)
+	body    = models.TextField(max_length=1000)
+	date    = models.DateTimeField(default=datetime.now, blank=True)
+	upvotes = models.IntegerField()
+	#answers = models.ManyToManyField("Answer") #error, reverse query clash
+
+	def __str__(self):
+		return self.title + "-" + str(self.upvotes)
+
+class Answer(models.Model):
+	author   = models.ForeignKey("User", on_delete=models.CASCADE, default="")
+	question = models.ForeignKey("Question", on_delete=models.CASCADE, default="")
+	body     = models.TextField(max_length=1000)
+	date     = models.DateTimeField(default=datetime.now, blank=True)
+	upvotes  = models.IntegerField()
 
 class Video(models.Model):
     title = models.CharField(max_length=100)
@@ -68,7 +86,7 @@ class Condition(models.Model):
     description = models.CharField(max_length=1000)
     writtenBy = models.CharField(max_length=1000)
 
-class Parent(models.Model):
+class User(models.Model):
     firstName = models.CharField(max_length=75, verbose_name="First Name")
     lastName = models.CharField(max_length=75, verbose_name="Last Name")
     email = models.EmailField(verbose_name="E-mail")
@@ -81,8 +99,8 @@ class Parent(models.Model):
     postalCode = models.CharField(max_length=6, blank=True, null=True, verbose_name="Postal Code")
 
 
-    numberOfUpvotes = models.IntegerField(max_length=75, blank=True, null=True, verbose_name="Number of Upvotes")
+    numberOfUpvotes = models.IntegerField(blank=True, null=True, verbose_name="Number of Upvotes")
     userSince = models.DateField(max_length=75, default="", blank=True, null=True, verbose_name="User Since")
 
-def __str__(self):
-    return self.firstName + '-' + str(self.numberOfUpvotes)
+    def __str__(self):
+    	return self.firstName + "-" + str(self.numberOfUpvotes)
