@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'embed_video',
     'Hestia.apps.HestiaConfig',
     'django.contrib.admin',
     'django.contrib.auth',

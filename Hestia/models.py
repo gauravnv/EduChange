@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from embed_video.fields import EmbedVideoField
 
 CONDITIONS = (
         ("ASD", "Autism Spectrum Disorders"),
@@ -31,9 +32,10 @@ CONDITIONS = (
 
 # Create your models here.
 
-class Videos(models.Model):
+class Video(models.Model):
     title = models.CharField(max_length=100)
     transcript = models.CharField(max_length=1000000)
     author = models.CharField(max_length=60)
     publication_date = models.DateField()
     condition = models.CharField(max_length=4, choices=CONDITIONS)
+    youtube_video = EmbedVideoField()           # same like models.URLField()
